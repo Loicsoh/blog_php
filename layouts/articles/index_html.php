@@ -1,0 +1,19 @@
+<h1>Listes des articles</h1>
+
+<hr>
+<div>
+  <?php foreach ($articles as $article): 
+    // var_dump($articles);
+    ?>
+  
+  <h2> <?= isset($article['titre']) ? $article['titre'] : 'Titre non disponible' ?> </h2>
+
+  <p> <?= isset($article['introduction']) ? $article['introduction'] : '' ?> </p>
+
+  <a href="article.php?id=<?= $article['id']?>">Voir plus</a>
+  <?php endforeach; ?>
+</div>
+<nav class="pagination-wrapper">
+
+  <?= $paginator ?>
+</nav>
